@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Login'
-import Home from './home'
+import Home from './Home'
 import Deals from './Deals'
 import Product from './Product'
 import New_Arrival from './New_Arrival'
