@@ -1,26 +1,25 @@
 import React, { useState } from 'react'
 import NavBar from './NavBar'
+import Footer from './footer'
 import BannerOne from './BannerOne'
 import LogoBrands from './LogoBrands'
 import DealsOfMonth from './DealsOfMonth'
 
 const Home = () => {
 
-  const greeting = "Prop test"
-
   return (
     <div className='bgColor'>
-      <NavBar brandName={greeting}/>
+      <NavBar />
       <BannerOne />
       <LogoBrands />
-      <DealsOfMonth />
+      {/* <DealsOfMonth /> */}
       <div>
         {/* <New_Arrival /> */}
       </div>
       <div>
         Products
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }

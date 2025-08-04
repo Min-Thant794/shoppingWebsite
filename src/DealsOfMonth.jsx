@@ -36,13 +36,13 @@ const DealsOfMonth = () => {
                 <img src={carouselImages[0]} alt="Carousel Image 1" className='' />
                 </div>
                 <div className='relative w-1/2 h-[550px]'>
-                <div className='flex gap-5 overflow-hidden'>
-                    <img src={carouselImages[1]} alt="Carousel Image 2" className='w-[300px]' />
-                    <img src={carouselImages[2]} alt="Carousel Image 3" className='w-[300px]' />
-                </div>
-                <div className='absolute bottom-0 left-0'>
-                    pagination
-                </div>
+                    <div className='flex gap-5 overflow-hidden'>
+                        <img src={carouselImages[1]} alt="Carousel Image 2" className='w-[300px]' />
+                        <img src={carouselImages[2]} alt="Carousel Image 3" className='w-[300px]' />
+                    </div>
+                    <div className='absolute bottom-0 left-0'>
+                        pagination
+                    </div>
                 </div>
             </div>
             </div>

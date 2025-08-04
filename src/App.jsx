@@ -25,13 +25,13 @@ const App = () => {
         <Route path='/deals' element={<Deals />}/>
         <Route path='/new-arrival' element={<New_Arrival />}/>
         <Route path='/products' element={<Product />}/>
-        <Route path='forgot-psw' element={<ForgotPsw />}/>
-        <Route path='support-center' element={<Support_Center />}/>
-        <Route path='invoicing' element={<Invoicing />}/>
-        <Route path='careers' element={<Careers />}/>
-        <Route path='contract' element={<Contract />}/>
-        <Route path='blog' element={<Blog />}/>
-        <Route path='faqs' element={<FAQs />}/>
+        <Route path='/forgot-psw' element={<ForgotPsw />}/>
+        <Route path='/support-center' element={<Support_Center />}/>
+        <Route path='/invoicing' element={<Invoicing />}/>
+        <Route path='/careers' element={<Careers />}/>
+        <Route path='/contract' element={<Contract />}/>
+        <Route path='/blog' element={<Blog />}/>
+        <Route path='/faqs' element={<FAQs />}/>
         
         
         <Route path='/*' element={<NotFound />}/>

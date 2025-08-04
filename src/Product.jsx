@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import BS from './components/BS'
 import BS2 from './components/BS2'
 import { BS1 } from './components/BS1'
+import Footer from './footer'
 
 //fetch product data from database
 //imagine this object array comes from database
@@ -58,9 +59,7 @@ const Product = () => {
             <BS1 product={DataFromDatabase} />
             <BS2 product={DataFromDatabase} />
       </div>
-      <div className='text-center text-3xl'>
-        count is {count}
-      </div>
+      <Footer />
     </div>
   )
 }

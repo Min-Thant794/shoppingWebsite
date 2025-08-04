@@ -1,30 +1,58 @@
-import React from 'react'
-import { homeImages } from './constants'
+import React, {useState, useEffect} from 'react'
+import { logoImages } from './constants'
 import { Link } from 'react-router-dom'
 
 const LogoBrands = () => {
+
+  const ImageCarousel = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+  }
+
+  useEffect(() => {
+    const interval = setInterval((prevIndex) => {
+        prevIndex === logoImages.length - 1 ? 0 : prevIndex + 1
+    }, 3000);
+    return () => clearInterval(interval);
+  });
+
   return (
     window.innerWidth >= 1024 ?
     <div className='grid grid-cols-5 mx-30 my-20 gap-5'>
-        <Link to='/products' className='grid grid-flow-col justify-items-start'>
-            <img src={homeImages[4]} alt="brand logo 1" />
-        </Link>
-        <Link to='/products' className='grid grid-flow-col justify-items-center'>
-            <img src={homeImages[5]} alt="brand logo 2" />
-        </Link>
-        <Link to='/products' className='grid grid-flow-col justify-items-center'>
-            <img src={homeImages[6]} alt="brand logo 3" />
-        </Link>
-        <Link to='/products' className='grid grid-flow-col justify-items-center'>
-            <img src={homeImages[7]} alt="brand logo 4" />
-        </Link>
-        <Link to='/products' className='grid grid-flow-col justify-items-end'>
-            <img src={homeImages[8]} alt="brand logo 5" />
-        </Link>
+        {
+            logoImages.map(logo => {
+                return <Link
+                key={logo.name}
+                to={logo.link}
+                >
+                <img src={logo.name} alt={logo.alt} />
+                </Link>
+            })
+        }
     </div>
     :
-    <div>
-        small
+    <div className='w-full overflow-hidden relative'>
+        <div
+            className='flex transition-transform duration-500 ease-in-out'
+        >
+            {
+                logoImages.map((logo, index) => {
+                    return <div
+                    key={logo.name}
+                    className='w-full flex-shrink-0 p-3'
+                    style={{width: `${100 / logoImages.length}%`}}
+                    >
+                        <Link
+                        to={logo.link}
+                        >
+                        <img src={logo.name}
+                         alt={logo.alt} 
+                         className='w-auto h-auto object-contain'
+                         />
+                        </Link>
+                    </div>
+                })
+            }
+        </div>
     </div>
   )
 }
