@@ -4,7 +4,7 @@ import logo from './assests/image/logoBrand.png'
 import {navItems} from './constants'
 import { IoMenu } from "react-icons/io5";
 
-const NavBar = () => {
+const NavBar = ({brandName, setter}) => {
   
   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
 
@@ -15,7 +15,14 @@ const NavBar = () => {
     ?
     <div className='flex lg:flex-row flex-col justify-between items-center p-3 bg-navColor px-30'>
       <div className='text-3xl font-bold font-serif cursor-pointer tracking-wider'>
-        THREADED
+        THREADED {brandName} 
+        <button 
+        className='bg-blue-600 p-5 cursor-pointer active:opacity-40'
+        onClick={() => setter(prev => prev + 1)}
+        >
+          Increase Count
+        
+        </button>
       </div>
       <div className='flex tracking-wider gap-5'>
         {

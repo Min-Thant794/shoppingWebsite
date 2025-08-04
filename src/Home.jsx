@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 import BannerOne from './BannerOne'
 import LogoBrands from './LogoBrands'
 import DealsOfMonth from './DealsOfMonth'
 
 const Home = () => {
+
+  const greeting = "Prop test"
+
   return (
     <div className='bgColor'>
-      <NavBar/>
+      <NavBar brandName={greeting}/>
       <BannerOne />
       <LogoBrands />
       <DealsOfMonth />
