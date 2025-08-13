@@ -4,17 +4,6 @@ import { Link } from 'react-router-dom'
 
 const LogoBrands = () => {
 
-  const ImageCarousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-  }
-
-  useEffect(() => {
-    const interval = setInterval((prevIndex) => {
-        prevIndex === logoImages.length - 1 ? 0 : prevIndex + 1
-    }, 3000);
-    return () => clearInterval(interval);
-  });
-
   return (
     window.innerWidth >= 1024 ?
     <div className='grid grid-cols-5 mx-30 my-20 gap-5'>
@@ -30,23 +19,22 @@ const LogoBrands = () => {
         }
     </div>
     :
-    <div className='w-full overflow-hidden relative'>
+    <div className='w-full'>
         <div
-            className='flex transition-transform duration-500 ease-in-out'
+            className='flex'
         >
             {
-                logoImages.map((logo, index) => {
+                logoImages.map((logo) => {
                     return <div
                     key={logo.name}
-                    className='w-full flex-shrink-0 p-3'
-                    style={{width: `${100 / logoImages.length}%`}}
+                    className='w-full py-3 mx-3'
                     >
                         <Link
                         to={logo.link}
                         >
                         <img src={logo.name}
                          alt={logo.alt} 
-                         className='w-auto h-auto object-contain'
+                         className=''
                          />
                         </Link>
                     </div>

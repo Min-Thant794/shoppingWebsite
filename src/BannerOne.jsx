@@ -18,7 +18,7 @@ const BannerOne = () => {
                 <div className='text-9xl text-center tracking-widest font-bold text-transparent txtSale selectNone'>SALE</div>
                 <div className='text-4xl text-center text-txtColor tracking-wider selectNone'>NEW ARRIVAL</div>
                 <div className='flex items-center justify-center'>
-                <Link to='/products'className='bg-third btnHover tracking-widest px-16 py-3 rounded-lg text-xl text-txtColor2'>SHOP NOW</Link>
+                <Link to='/products'className='bg-third btnHover tracking-widest px-16 py-3 rounded-lg text-xl text-txtColor2 shadow-xl'>SHOP NOW</Link>
                 </div>
             </div>
             <div className='bg-secondary rounded-3xl flex justify-center items-end align-center overflow-hidden'>
@@ -39,7 +39,7 @@ const BannerOne = () => {
             <div className='text-9xl text-center tracking-widest font-bold text-transparent txtSale selectNone'>SALE</div>
             <div className='text-4xl text-center text-txtColor tracking-wider selectNone'>NEW ARRIVAL</div>
             <div className='flex items-center justify-center'>
-            <Link to='/products'className='bg-third btnHover tracking-widest px-16 py-3 rounded-lg text-xl text-txtColor2'>SHOP NOW</Link>
+            <Link to='/products'className='bg-third btnHover tracking-widest px-16 py-3 rounded-lg text-xl text-txtColor2 shadow-xl'>SHOP NOW</Link>
             </div>
         </div>
         <div className='bg-secondary rounded-3xl flex align-center items-center px-3'>
