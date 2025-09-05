@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 import Footer from './footer'
-import { dealsDiscount, dealsProducts, dealsCategories } from './constants'
+import { dealsDiscount, dealsProducts, ProductCategories } from './constants'
 import { FaStar } from 'react-icons/fa6'
 import { useLocation } from 'react-router-dom'
 import { MdClose } from "react-icons/md";
@@ -49,16 +49,16 @@ const Deals = () => {
           <div className='text-4xl font-bold font-roboto tracking-wide'>
             NATIONAL DAY SALE: EXTRA 30% OFF IN CART
           </div>
-          <div className='flex justify-between items-center bg-secondary text-center font-semibold tracking-wide text-md p-3 rounded-lg'>
-            <input type="text" placeholder='Search Deal Products' onChange={(e) => setSearchDealProducts(e.target.value)} className='outline-none active:opacity-60' />
+          <label htmlFor='search' className='flex justify-between items-center bg-secondary text-center font-semibold tracking-wide text-md p-3 rounded-lg shadow-xl'>
+            <input id='search' type="text" placeholder='Search Deal Products' onChange={(e) => setSearchDealProducts(e.target.value)} className='outline-none active:opacity-60' />
             <FaSearch className='active:opacity-60 text-lg' />
-          </div>
+          </label>
         </div>
         <div className='flex justify-between items-center'>
           <div className='flex justify-start items-center gap-3'>
             <div 
             onClick={() => setIsSelectedDeals(("All"))}
-            className={`py-3 px-3 bg-txtColor  text-center font-roboto transition-all duration-300 hover:bg-txtColor/70 active:opacity-60 font-semibold tracking-wider rounded-md shadow-2xl cursor-pointer`}>
+            className={`py-3 px-3 bg-txtColor  text-center font-roboto transition-all duration-300 hover:bg-txtColor/70 active:opacity-60 font-semibold tracking-wider rounded-md shadow-xl cursor-pointer`}>
               Shop All Deals
             </div>
             <div className='grid grid-cols-4 gap-3 py-10'>
@@ -66,7 +66,7 @@ const Deals = () => {
                 dealsDiscount.map((dis) => (
                   <Link
                   onClick={()=>setIsSelectedDeals(dis.discount)}
-                  className={`flex items-center justify-center gap-2 px-2 py-3 bg-txtColor ${(dis.discount === isSelectedDeals ? 'bg-txtColor4 text-txtColor2' : '')} transition-all duration-300 hover:bg-txtColor/70 active:opacity-60 text-center font-roboto font-semibold tracking-wider rounded-md shadow-2xl`}
+                  className={`flex items-center justify-center gap-2 px-2 py-3 bg-txtColor ${(dis.discount === isSelectedDeals ? 'bg-txtColor4 text-txtColor2' : '')} transition-all duration-300 hover:bg-txtColor/70 active:opacity-60 text-center font-roboto font-semibold tracking-wider rounded-md shadow-xl`}
                   > 
                     {dis.discount}
                     <div>Discount Deals</div>

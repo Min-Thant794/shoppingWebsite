@@ -14,6 +14,7 @@ import Careers from './Careers'
 import Contract from './Contract'
 import Blog from './Blog'
 import FAQs from './FAQs'
+import { Bounce, ToastContainer, toast } from 'react-toastify'
 
 const App = () => {
   return (
@@ -36,6 +37,19 @@ const App = () => {
         
         <Route path='/*' element={<NotFound />}/>
       </Routes>
+      <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      transition={Bounce}
+      />
     </BrowserRouter>
   )
 }

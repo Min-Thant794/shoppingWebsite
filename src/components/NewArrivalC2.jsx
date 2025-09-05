@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { newArrivalCategories } from '../constants'
+import { newArrivalProducts } from '../constants'
 import arrivalImage from '../assests/image/peakyBlinder.png'
 import points from '../assests/image/points.png'
 import { FaHandHoldingHeart } from "react-icons/fa";
