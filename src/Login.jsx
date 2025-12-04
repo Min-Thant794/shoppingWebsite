@@ -33,10 +33,13 @@ const Login = () => {
             }
 
             const response = await axios.post(login ? 'http://localhost:8080/api/v1/user/' : 'http://localhost:8080/api/v1/user/login',
-                {name: username, 
-                email: email, 
-                phoneNumber: phoneNumber, 
-                password: password})
+                {
+                    name: username, 
+                    email: email, 
+                    phoneNumber: phoneNumber, 
+                    password: password,
+                    rememberMe
+                })
                 
             //traditional fetching api
             // const response1 = await fetch(

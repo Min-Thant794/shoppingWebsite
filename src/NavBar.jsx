@@ -62,7 +62,7 @@ const NavBar = ({}) => {
         <div className='fixed w-full h-screen inset-0 bg-black/20'
           onClick={(e) =>{
             e.stopPropagation()
-            setIsSideBarOpen(false)
+            setIsSideBarOpen(true)
           }}
         >
 
