@@ -303,3 +303,23 @@ export const followUsImages = [
   {name: followUsImage6, alt: "follow us image 6"},
   {name: followUsImage7, alt: "follow us image 7"}
 ]
+
+//proceAndText
+
+export const priceAndText = [
+  {
+    price: '$444B+',
+    text: "Global economic activity in USD",
+    icon: "📉"
+  },
+  {
+    price: '$644M+',
+    text: "Customers worldwide from millions of Shomyn stores",
+    icon: "🌐"
+  },
+  {
+    price: '175',
+    text: "Countries where Shopify brands operate",
+    icon: "🗾"
+  },
+]

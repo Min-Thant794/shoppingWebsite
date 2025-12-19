@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link, NavLink } from 'react-router-dom';
-import { footerLinks } from './constants';
 import { SocialMediaIcons } from './constants';
 
 const footer = () => {
