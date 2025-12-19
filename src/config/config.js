@@ -7,8 +7,8 @@ export const STORAGE_KEYS = {
 
 export const API_ROUTES = {
     // DEPLOY_BASE_URL: "https://"
-    LOCAL_BASE_URL: "http://localhost:8080/api/v1",
-    LOCAL_SERVER_URL: "http://localhost:8080/",
+    LOCAL_BASE_URL: "http://localhost:4000/api/v1",
+    LOCAL_SERVER_URL: "http://localhost:8080",
 
     //user auth
     USER_LOGIN: "/user/login",

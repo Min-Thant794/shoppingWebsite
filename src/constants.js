@@ -69,6 +69,7 @@ export const navItems = [
     {name: "New Arrival", path: "/new-arrival"},
     {name: "Products", path: "/products"},
     {name: "Log In", path: "/login"},
+    {name: "Cart", path: "/cart"}
   ]
 
 export const footerLinks = [
@@ -304,22 +305,22 @@ export const followUsImages = [
   {name: followUsImage7, alt: "follow us image 7"}
 ]
 
-//proceAndText
+//priceAndText
 
 export const priceAndText = [
   {
-    price: '$444B+',
-    text: "Global economic activity in USD",
-    icon: "📉"
+      price: '$444B+',
+      text: "Global economic activity in USD",
+      icon: "📉"
   },
   {
-    price: '$644M+',
-    text: "Customers worldwide from millions of Shomyn stores",
-    icon: "🌐"
+      price: '$644M+',
+      text: "Customers worldwide from millions of Shomyn stores",
+      icon: "🌐"
   },
   {
-    price: '175',
-    text: "Countries where Shopify brands operate",
-    icon: "🗾"
+      price: '175',
+      text: "Countries where Shopify brands operate",
+      icon: "🗾"
   },
 ]
