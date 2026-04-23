@@ -154,10 +154,19 @@ cd shopping-backend && npm start
 <p align="center">
   <img src="./screenshots/home.png" width="80%" />
 </p>
+<p align="center">
+  <sub>Customer storefront with product browsing and deals</sub>
+</p>
+
+<p align="center">
 
 <p align="center">
   <img src="./screenshots/deals.png" width="45%" />
   <img src="./screenshots/cart.png" width="45%" />
+</p>
+
+<p align="center">
+  <sub>Shopping cart with selected items and checkout flow</sub>
 </p>
 
 ### Authentication
@@ -171,7 +180,9 @@ cd shopping-backend && npm start
 <p align="center">
   <img src="./screenshots/adminDashboard.png" width="80%" />
 </p>
-```
+<p align="center">
+  <sub>Admin dashboard with real-time order monitoring and analytics</sub>
+</p>
 
 ---
 
