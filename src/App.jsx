@@ -13,7 +13,6 @@ import { Bounce, ToastContainer, toast } from 'react-toastify'
 
 const App = () => {
 
-  // initialize socket connection ONCE in the root
   useEffect(() => {
     socket.connect();
 
