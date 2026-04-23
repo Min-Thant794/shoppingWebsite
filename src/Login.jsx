@@ -24,7 +24,8 @@ const Login = () => {
     const toggleRememberMe = () => setIsRemember(!isRemember);
 
     const userLogin = async () => {
-        try {if(email.trim() === "" || !emailRegex.test(email)){
+        try {
+            if(email.trim() === "" || !emailRegex.test(email)){
                 return alert("Invalid Email Input!")
             }else if(username.trim() === ""){
                 return alert("Please Enter Username!")
@@ -32,13 +33,15 @@ const Login = () => {
                 return alert("Please Enter Password!")
             }
 
+            setIsLoading(true);
+
             const response = await axios.post(login ? 'http://localhost:8080/api/v1/user/' : 'http://localhost:8080/api/v1/user/login',
                 {
                     name: username, 
                     email: email, 
                     phoneNumber: phoneNumber, 
                     password: password,
-                    rememberMe
+                    rememberMe: isRemember
                 })
                 
             //traditional fetching api
@@ -71,6 +74,8 @@ const Login = () => {
             const errorResponse = error;
             console.log("Register Error", errorResponse.response.data.message);
             toast.error(errorResponse.response.data.message);
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -206,6 +211,7 @@ const Login = () => {
                     }
                 </div>
                 <RippleButton
+                    type="submit"
                     className={`rounded-sm p-2 mt-5 text-txtColor2 ${isLoading ? 'animate-pulse' : ''} bg-primary text-center font-semibold btnHover w-full`}>
                     {login ? 'Register' : 'Login'}
                 </RippleButton>

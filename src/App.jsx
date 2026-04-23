@@ -9,7 +9,8 @@ import New_Arrival from './New_Arrival'
 import NotFound from './NotFound'
 import SignUp from './SignUp'
 import Settings from './Settings'
-import { Bounce, ToastContainer, toast } from 'react-toastify'
+import Cart from './Cart'
+import { Bounce, ToastContainer } from 'react-toastify'
 
 const App = () => {
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path='/new-arrival' element={<New_Arrival />}/>
         <Route path='/products' element={<Product />}/>
         <Route path='/settings' element={<Settings/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         
         <Route path='/*' element={<NotFound />}/>
       </Routes>

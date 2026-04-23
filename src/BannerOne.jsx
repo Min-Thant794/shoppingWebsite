@@ -15,7 +15,7 @@ const BannerOne = () => {
             </div>
             <div className='flex flex-col items-center gap-3 justify-center'>
                 <div className='text-7xl text-center text-txtColor font-semibold tracking-widest stretchTxt selectNone'>ULTIMATE</div>
-                <div className='text-9xl text-center tracking-widest font-bold text-transparent txtSale selectNone'>SALE</div>
+                <div className='text-9xl text-center tracking-widest font-bold txtSale selectNone text-gray-500'>SALE</div>
                 <div className='text-4xl text-center text-txtColor tracking-wider selectNone'>NEW ARRIVAL</div>
                 <div className='flex items-center justify-center'>
                 <Link to='/products'className='bg-third btnHover tracking-widest px-16 py-3 rounded-lg text-xl text-txtColor2 shadow-xl'>SHOP NOW</Link>

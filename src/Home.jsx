@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className='bgColor'>
       <NavBar />
-      <div className='pt-5'>
+      <div className='pt-15'>
         <BannerOne />
       </div>
       <LogoBrands />

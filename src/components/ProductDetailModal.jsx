@@ -1,45 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useCart } from "../context/CartContext";
 
 const ProductDetailModal = ({ open, onClose, product }) => {
-    if (!open || !product) return null;
-
     const { addToCart } = useCart();
 
-    const [selectedImage, setSelectedImage] = useState(product.imageUrls?.[0]);
+    const [selectedImage, setSelectedImage] = useState(product?.imageUrls?.[0] ?? "");
     const [selectedSize, setSelectedSize] = useState(null);
     const [selectedVariant, setSelectedVariant] = useState(null);
 
-    // ✅ TAKE HIGHEST PRICE FROM ALL SOURCES
+    useEffect(() => {
+        setSelectedImage(product?.imageUrls?.[0] ?? "")
+        setSelectedSize(null);
+        setSelectedVariant(null);
+    }, [product]);
+
+    if (!open || !product) return null;
+
+    const getFinalPrice = () => {
+        if (selectedSize?.price) return selectedSize.price;
+        if (selectedVariant?.price) return selectedVariant.price;
+        return product?.price ?? 0;
+    };
+
     const getHighestPrice = () => {
-        const prices = [];
-
-        // size prices
-        if (product.size && product.size.length > 0) {
-            product.size.forEach(s => prices.push(s.price));
-        }
-
-        // variant prices
-        if (product.variants && product.variants.length > 0) {
-            product.variants.forEach(v => prices.push(v.price));
-        }
-
-        // base price fallback
-        if (product.price) {
-            prices.push(product.price);
-        }
-
-        if (prices.length === 0) return 0;
-
-        return Math.max(...prices);
+        const sizePrice = product?.size?.reduce((max, s) => Math.max(max, s.price ?? 0), 0) ?? 0;
+        const variantPrice = product?.variants?.reduce((max, v) => Math.max(max, v.price ?? 0), 0) ?? 0;
+        return Math.max(sizePrice, variantPrice, product?.price ?? 0);
     };
 
     const handleAddToCart = () => {
-        const finalPrice = getHighestPrice();
+        const finalPrice = getFinalPrice();
 
+        console.log("product: ", product);
 
-        console.log("product---", product)
         addToCart({
             id: product._id,
             name: product.name,
@@ -83,7 +77,7 @@ const ProductDetailModal = ({ open, onClose, product }) => {
 
                 {/* Thumbnails */}
                 <div className="grid grid-cols-5 gap-2 mb-4">
-                    {product.imageUrls.map((img, idx) => (
+                    {product.imageUrls?.map((img, idx) => (
                         <img
                             key={idx}
                             src={img}
@@ -154,7 +148,7 @@ const ProductDetailModal = ({ open, onClose, product }) => {
                     onClick={handleAddToCart}
                     className="w-full bg-black text-white py-3 rounded-lg mt-6 hover:bg-gray-800 transition"
                 >
-                    Add to Cart (Highest Price: ¥{getHighestPrice()})
+                    Add to Cart (Highest Price: ¥{getFinalPrice()})
                 </button>
             </div>
         </div>

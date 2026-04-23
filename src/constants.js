@@ -68,8 +68,8 @@ export const navItems = [
     {name: "Deals", path: "/deals"},
     {name: "New Arrival", path: "/new-arrival"},
     {name: "Products", path: "/products"},
-    {name: "Log In", path: "/login"},
-    {name: "Cart", path: "/cart"}
+    {name: "Cart", path: "/cart"},
+    {name: "Log In", path: "/login"}
   ]
 
 export const footerLinks = [

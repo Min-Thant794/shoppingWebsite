@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {navItems} from './constants'
 import { IoMenu } from "react-icons/io5";
 
-const NavBar = ({}) => {
+const NavBar = () => {
   
   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
 
@@ -43,10 +43,12 @@ const NavBar = ({}) => {
       </div>
       <div className={`absolute transition-all duration-700 bg-navColor w-full flex flex-col z-30 items-center py-2 gap-3 ${isSideBarOpen ? 'top-12' : '-top-[100%]'}`}>
         {navItems.map((link, index) => (
-          <div className='w-full text-2xl tracking-wider text-secondary text-center'>
+          <div 
+          key={link.name} 
+          className='w-full text-2xl tracking-wider text-secondary text-center'>
             <NavLink 
-              key={link.name}
               to={link.path}
+              onClick={() => setIsSideBarOpen(false)}
               className={`text-nowrap transition-all ${isSideBarOpen ? 'opacity-100' : 'opacity-0'}`}
               style={{
                 transitionDuration: `${700 * index}ms`
@@ -62,7 +64,7 @@ const NavBar = ({}) => {
         <div className='fixed w-full h-screen inset-0 bg-black/20'
           onClick={(e) =>{
             e.stopPropagation()
-            setIsSideBarOpen(true)
+            setIsSideBarOpen(false)
           }}
         >
 

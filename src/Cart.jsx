@@ -30,13 +30,13 @@ const Cart = () => {
     if (userData?.paymentMethods?.length) {
         setSavedCards(userData.paymentMethods);
     }
-  }, []);
+  }, [userData?.paymentMethods]);
 
   useEffect(() => {
     socket.on("order_success", (res) => {
         alert(res.message);
         clearCart();
-        setLoading(flase);
+        setLoading(false);
     });
 
     socket.on("order_error", (error) => {
@@ -48,12 +48,7 @@ const Cart = () => {
         socket.off("order_success");
         socket.off("order_error");
     };
-  }, []);
-
-  const handleIncrease = (item) => {
-    if(item.qty === 1) return;
-    updateQty(item.cartItemId, item.qty + 1);
-  };
+  }, [clearCart]);
 
   const handleDecrease = (item) => {
     if (item.qty === 1) return;
@@ -120,7 +115,7 @@ const Cart = () => {
             (
                 <div className='space-y-4'>
                     {/* Cart items */}
-                    {cart.map((item) => {
+                    {cart.map((item) => (
                         <div
                         key={item.cartItemId}
                         className='bg-white p-4 rounded-xl shadow flex items-center gap-4'
@@ -162,7 +157,9 @@ const Cart = () => {
                                     -
                                 </button>
                                 <span className='font-semibold'>{item.qty}</span>
-                                <button className='px-3 py-1 rounded bg-gray-200'>
+                                <button
+                                onClick={() => updateQty(item.cartItemId, item.qty + 1)}
+                                className='px-3 py-1 rounded bg-gray-200'>
                                     +
                                 </button>
                             </div>
@@ -170,12 +167,12 @@ const Cart = () => {
                             {/* REMOVE */}
                             <button
                             onClick={() => removeFromCart(item.cartItemId)}
-                            className='text-red-500 horver:text-red-700'
+                            className='text-red-500 hover:text-red-700'
                             >
                                 <IoIosCloseCircle size={28}/>
                             </button>
                         </div>
-                    })}
+                    ))}
 
                     {/* TOTAL + CHECKOUT */}
                     <div className='bg-white p-4 rounded-xl shadow mt-6 flex items-center justify-between'>
@@ -188,7 +185,7 @@ const Cart = () => {
                         disabled={loading}
                         className='bg-black text-white px-6 rounded-lg hover:bg-gray-800 transition disabled:opacity-50'
                         >
-                            Checkout → ${totalAmount.toLocaleString()};
+                            Checkout → ${totalAmount.toLocaleString()}
                         </button>
                     </div>
 
@@ -254,7 +251,7 @@ const Cart = () => {
                         </button>
                         <button
                         onClick={handleConfirmPayment}
-                        className='px-4 py-2 rounded bg-black text-whtie'
+                        className='px-4 py-2 rounded bg-black text-white'
                         >
                             Confirm Payment
                         </button>
