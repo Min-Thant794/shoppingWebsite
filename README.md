@@ -149,20 +149,28 @@ cd shopping-backend && npm start
 
 ## Screenshots
 
-### Home Page
-![Home Page](./screenshots/home.png)
+### Customer Experience
 
-### Deals Page
-![Deals Page](./screenshots/deals.png)
+<p align="center">
+  <img src="./screenshots/home.png" width="80%" />
+</p>
 
-### Cart Page
-![Cart Page](./screenshots/cart.png)
+<p align="center">
+  <img src="./screenshots/deals.png" width="45%" />
+  <img src="./screenshots/cart.png" width="45%" />
+</p>
 
-### Login Page
-![Login Page](./screenshots/login.png)
+### Authentication
 
-### New Arrival Page
-![New Arrival Page](./screenshots/newArrival.png)
+<p align="center">
+  <img src="./screenshots/login.png" width="60%" />
+</p>
+
+### Admin Dashboard
+
+<p align="center">
+  <img src="./screenshots/adminDashboard.png" width="80%" />
+</p>
 ```
 
 ---
