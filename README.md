@@ -149,17 +149,20 @@ cd shopping-backend && npm start
 
 ## Screenshots
 
-> _Add screenshots here to give visitors a quick visual preview._
-
-```md
 ### Home Page
 ![Home Page](./screenshots/home.png)
 
-### Product Page
-![Product Page](./screenshots/products.png)
+### Deals Page
+![Deals Page](./screenshots/deals.png)
 
-### Admin Dashboard
-![Admin Dashboard](./screenshots/admin-dashboard.png)
+### Cart Page
+![Cart Page](./screenshots/cart.png)
+
+### Login Page
+![Login Page](./screenshots/login.png)
+
+### New Arrival Page
+![New Arrival Page](./screenshots/newArrival.png)
 ```
 
 ---
